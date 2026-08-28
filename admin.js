@@ -83,12 +83,12 @@ function renderTable() {
 
         tr.innerHTML = `
             <td>${dateStr}</td>
-            <td style="font-weight: bold;">${data.name}</td>
+            <td><strong style="font-size: 1.1em;">${data.name}</strong><br><span style="font-size: 0.9em; color: #555;">${data.phone || '없음'}</span></td>
             <td>${data.age} / ${data.gender}</td>
             <td>${data.school_info}<br><span style="font-size: 0.9em; color: gray;">(${data.status})</span></td>
             <td>${Array.isArray(data.interested_activities) ? data.interested_activities.join(', ') : data.interested_activities}</td>
             <td>${data.boardgame_exp}</td>
-            <td>${Array.isArray(data.available_days) ? data.available_days.join(', ') : data.available_days}</td>
+            <td>${Array.isArray(data.available_days) ? data.available_days.join(', ') : data.available_days}<br><span style="font-size: 0.9em; color: #555;">${data.location || '없음'}</span></td>
             <td><button class="btn-small" data-index="${index}">보기</button></td>
         `;
         tbody.appendChild(tr);
@@ -108,6 +108,7 @@ function openModal(data) {
     document.getElementById('modal-name').innerText = `${data.name} 님의 상세정보`;
     document.getElementById('modal-escaperoom').innerText = data.escaperoom_exp;
     document.getElementById('modal-favorite').innerText = data.favorite_games;
+    document.getElementById('modal-location').innerText = data.location || '없음';
     document.getElementById('modal-attendance').innerText = data.attendance_possible;
     document.getElementById('modal-times').innerText = Array.isArray(data.available_times) ? data.available_times.join(', ') : data.available_times;
     document.getElementById('modal-motivation').innerText = data.motivation;

@@ -86,6 +86,7 @@ async function submitForm(event) {
         const applicationData = {
             name: formData.get('q3'),
             age: formData.get('q4'),
+            phone: formData.get('phone'),
             gender: formData.get('q5'),
             school_info: formData.get('q6'),
             status: formData.get('q7'),
@@ -95,6 +96,7 @@ async function submitForm(event) {
             escaperoom_exp: formData.get('q11'),
             available_days: availableDays,
             available_times: availableTimes,
+            location: formData.get('location'),
             attendance_possible: formData.get('q14'),
             motivation: formData.get('q15'),
             submitted_at: new Date().toISOString()
