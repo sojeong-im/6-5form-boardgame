@@ -28,10 +28,14 @@ document.getElementById('btn-login').addEventListener('click', async () => {
         loginBtn.innerText = '데이터 불러오는 중... ⏳';
         loginBtn.disabled = true;
 
-        await fetchData();
-
-        document.getElementById('login-section').style.display = 'none';
-        document.getElementById('admin-dashboard').style.display = 'block';
+        try {
+            await fetchData();
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('admin-dashboard').style.display = 'block';
+        } catch (e) {
+            loginBtn.innerText = '접속하기';
+            loginBtn.disabled = false;
+        }
     } else {
         errorMsg.style.display = 'block';
     }
@@ -58,7 +62,8 @@ async function fetchData() {
         renderTable();
     } catch (error) {
         console.error("Error getting documents: ", error);
-        alert('데이터를 불러오는데 실패했습니다.');
+        alert('데이터를 불러오는데 실패했습니다. (파이어베이스 권한 설정 등을 확인해주세요.)');
+        throw error;
     }
 }
 
