@@ -11,8 +11,8 @@ function checkQuest() {
     const q2Answer = document.querySelector('input[name="q2"]').value.trim();
     const errorMsg = document.getElementById('quest-error');
 
-    // 정답 체크 (Q1: 25, Q2: 9)
-    if (q1Answer === '25' && q2Answer === '9') {
+    // 정답 체크 (Q1: 25, Q2: 10)
+    if (q1Answer === '25' && q2Answer === '10') {
         // 정답일 경우
         errorMsg.style.display = 'none';
         
