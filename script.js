@@ -3,12 +3,13 @@ import { getFirestore, collection, addDoc } from "https://www.gstatic.com/fireba
 
 // TODO: 파이어베이스 설정값을 여기에 붙여넣으세요! (Firebase Console > Project Settings)
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDLuoBvGkURALl_MbKIyGBFNsYyMikz3KQ",
+  authDomain: "boardgame-form.firebaseapp.com",
+  projectId: "boardgame-form",
+  storageBucket: "boardgame-form.firebasestorage.app",
+  messagingSenderId: "345074018243",
+  appId: "1:345074018243:web:051075a9b7e06c798a3f76",
+  measurementId: "G-6ZKEZB36VR"
 };
 
 // 파이어베이스 초기화
