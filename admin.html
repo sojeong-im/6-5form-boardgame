@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보겜대학 3기 관리자 페이지</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-container { max-width: 1000px; margin: 0 auto; }
+        .data-table { width: 100%; border-collapse: collapse; text-align: left; }
+        .data-table th, .data-table td { padding: 12px; border-bottom: 2px solid #ddd; }
+        .data-table th { background-color: #fdd835; color: #111; font-size: 1.1rem; }
+        .data-table tr:hover { background-color: #f0f0f0; }
+        .btn-small { padding: 5px 10px; font-size: 1rem; border-radius: 6px; background-color: #9c27b0; color: white; border: 2px solid #111; cursor: pointer; }
+        .btn-small:hover { background-color: #7b1fa2; }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h1 style="text-align: center; color: white; margin-bottom: 20px; text-shadow: 2px 2px 0 #111;">보겜대학 3기 관리자 페이지 🎓</h1>
+
+        <!-- Password Section -->
+        <div id="login-section" class="card">
+            <div class="card-header purple-bg">
+                <h2>🔐 관리자 로그인</h2>
+            </div>
+            <div class="card-body text-center">
+                <input type="password" id="admin-pw" class="text-input" placeholder="비밀번호 5자리" maxlength="5">
+                <button type="button" class="btn-primary" id="btn-login" style="margin-top: 15px;">접속하기</button>
+                <p id="login-error" class="error-msg" style="display: none; margin-top: 10px;">비밀번호가 틀렸습니다.</p>
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="admin-dashboard" class="card" style="display: none;">
+            <div class="card-header yellow-bg">
+                <h2>📋 지원자 데이터 목록 <span id="total-count" style="font-size: 1.2rem; color: #555;">(0명)</span></h2>
+            </div>
+            <div class="card-body" style="overflow-x: auto;">
+                <table class="data-table" id="applicants-table">
+                    <thead>
+                        <tr>
+                            <th>제출일시</th>
+                            <th>이름</th>
+                            <th>나이/성별</th>
+                            <th>학교/상태</th>
+                            <th>관심활동</th>
+                            <th>보겜 경험</th>
+                            <th>가능 요일</th>
+                            <th>상세보기</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- 데이터를 자바스크립트로 불러옵니다 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div id="modal-overlay" style="display: none; position: fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.6); z-index: 999;"></div>
+    <div id="detail-modal" class="card" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto;">
+        <div class="card-header purple-bg">
+            <h2 id="modal-name">상세 내용</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>방탈출 경험:</strong> <span id="modal-escaperoom"></span></p>
+            <p><strong>선호/해보고 싶은 보겜:</strong> <span id="modal-favorite"></span></p>
+            <p><strong>참여 가능 여부:</strong> <span id="modal-attendance"></span></p>
+            <p><strong>참여 가능 시간대:</strong> <span id="modal-times"></span></p>
+            <hr style="margin: 15px 0; border: 1px dashed #ccc;">
+            <p><strong>지원 동기:</strong></p>
+            <div id="modal-motivation" style="background: #f9f9f9; padding: 12px; border-radius: 8px; border: 2px solid #eee; margin-bottom: 15px; font-family: sans-serif; font-size: 0.95rem; line-height: 1.5; white-space: pre-wrap;"></div>
+            
+            <button class="btn-primary btn-close-modal">닫기</button>
+        </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
