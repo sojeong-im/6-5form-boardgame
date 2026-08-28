@@ -27,9 +27,11 @@ function checkQuest() {
             setTimeout(() => {
                 const el = document.getElementById(id);
                 el.style.display = 'block';
-                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, index * 200); // 순차적으로 나타나는 효과
         });
+
+        // 애니메이션 시작과 동시에 맨 위로 스크롤 고정
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 
     } else {
         // 오답일 경우
