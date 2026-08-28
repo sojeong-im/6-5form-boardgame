@@ -111,7 +111,7 @@ async function submitForm(event) {
 
         await addDoc(collection(db, "applications"), applicationData);
 
-        alert('🎉 보겜대학 3기 지원이 성공적으로 완료되었습니다!\n(데이터베이스 저장 완료)');
+        alert('🎉 보겜대학 3기 지원이 성공적으로 완료되었습니다!\n꼼꼼히 확인 후 운영진이 개별적으로 연락드리겠습니다. 🎲');
         
         // 제출 후 폼 초기화 및 상단으로 이동
         event.target.reset();
