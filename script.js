@@ -38,11 +38,11 @@ function checkQuest() {
         document.querySelector('.header').style.marginBottom = '10px';
         document.querySelector('.poster-img').style.maxWidth = '50%';
 
-        const sections = ['quest-success', 'section-basic', 'section-reg', 'section-avail', 'section-final'];
+        const sections = ['quest-success', 'section-actions'];
         sections.forEach((id, index) => {
             setTimeout(() => {
                 const el = document.getElementById(id);
-                el.style.display = 'block';
+                if (el) el.style.display = 'block';
             }, index * 200);
         });
 
@@ -131,3 +131,33 @@ async function submitForm(event) {
 // 이벤트 리스너 등록
 document.getElementById('btn-check-quest').addEventListener('click', checkQuest);
 document.getElementById('application-form').addEventListener('submit', submitForm);
+
+// 액션 버튼 이벤트 리스너
+if (document.getElementById('btn-show-form')) {
+    document.getElementById('btn-show-form').addEventListener('click', () => {
+        document.getElementById('section-actions').style.display = 'none';
+        
+        const formSections = ['section-basic', 'section-reg', 'section-avail', 'section-final'];
+        formSections.forEach((id, index) => {
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = 'block';
+            }, index * 200);
+        });
+    });
+}
+
+if (document.getElementById('btn-show-photos')) {
+    document.getElementById('btn-show-photos').addEventListener('click', () => {
+        document.getElementById('section-actions').style.display = 'none';
+        document.getElementById('section-photos').style.display = 'block';
+    });
+}
+
+if (document.getElementById('btn-back-from-photos')) {
+    document.getElementById('btn-back-from-photos').addEventListener('click', () => {
+        document.getElementById('section-photos').style.display = 'none';
+        document.getElementById('section-actions').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}

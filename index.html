@@ -67,7 +67,32 @@
             <div id="quest-success" class="card form-section" style="display: none;">
                 <div class="card-body text-center">
                     <h2 class="success-title">🎉 QUEST CLEAR!</h2>
-                    <p>보겜대학 입학 퀘스트를 통과하셨습니다!<br>이제 3기 신입생 지원서를 작성해주세요. 🎓</p>
+                    <p>보겜대학 입학 퀘스트를 통과하셨습니다!<br>무엇을 먼저 하시겠어요? 🎓</p>
+                </div>
+            </div>
+
+            <!-- ACTION BUTTONS SECTION -->
+            <div id="section-actions" class="card form-section" style="display: none; text-align: center;">
+                <div class="card-body">
+                    <button type="button" id="btn-show-form" class="btn-primary" style="margin-top: 0; margin-bottom: 10px;">보겜대학 지원하기 📝</button>
+                    <button type="button" id="btn-show-photos" class="btn-secondary" style="margin-top: 0;">지난 기수 사진보기 📸</button>
+                </div>
+            </div>
+
+            <!-- PHOTO GALLERY SECTION -->
+            <div id="section-photos" class="card form-section" style="display: none;">
+                <div class="card-header purple-bg">
+                    <h2>📸 지난 기수 활동 사진</h2>
+                </div>
+                <div class="card-body text-center">
+                    <div class="photo-gallery" style="display: flex; flex-direction: column; gap: 10px;">
+                        <img src="images/photo1.jpg" alt="활동 사진 1" style="width: 100%; border-radius: 8px; border: 3px solid #111;">
+                        <img src="images/photo2.jpg" alt="활동 사진 2" style="width: 100%; border-radius: 8px; border: 3px solid #111;">
+                        <img src="images/photo3.jpg" alt="활동 사진 3" style="width: 100%; border-radius: 8px; border: 3px solid #111;">
+                        <img src="images/photo4.jpg" alt="활동 사진 4" style="width: 100%; border-radius: 8px; border: 3px solid #111;">
+                        <img src="images/photo5.jpg" alt="활동 사진 5" style="width: 100%; border-radius: 8px; border: 3px solid #111;">
+                    </div>
+                    <button type="button" id="btn-back-from-photos" class="btn-secondary">닫기 🔙</button>
                 </div>
             </div>
 
