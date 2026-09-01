@@ -161,3 +161,15 @@ if (document.getElementById('btn-back-from-photos')) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+if (document.getElementById('btn-back-from-form')) {
+    document.getElementById('btn-back-from-form').addEventListener('click', () => {
+        const formSections = ['section-basic', 'section-reg', 'section-avail', 'section-final'];
+        formSections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.style.display = 'none';
+        });
+        document.getElementById('section-actions').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
